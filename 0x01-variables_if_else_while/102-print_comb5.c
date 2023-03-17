@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  *
- * Return 0
+ * Return: 0
  */
 int main(void)
 {
@@ -18,13 +18,16 @@ int main(void)
 				for (m1 = 48; m1 < 58; m1++)
 				{
 					if ((n == n1 && m == m1) ||
-					(n > n1 || m > m1))
+					(n >= n1 && m > m1))
 						continue;
 					putchar(n);
 					putchar(m);
 					putchar(' ');
 					putchar(n1);
 					putchar(m1);
+					if (n == 57 && m == 56 && n1 == 57 &&
+					m1 == 57)
+						break;
 					putchar(',');
 					putchar(' ');
 				}
