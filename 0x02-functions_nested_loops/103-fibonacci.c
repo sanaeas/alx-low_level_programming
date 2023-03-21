@@ -9,7 +9,6 @@
 int main(void)
 {
 	unsigned long num1, num2, sum, evenSum;
-	int i;
 
 	num1 = 0;
 	num2 = 1;
