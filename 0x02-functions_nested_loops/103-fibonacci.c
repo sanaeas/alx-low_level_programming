@@ -24,4 +24,5 @@ int main(void)
 			evenSum += sum;
 	}
 	printf("%lu\n", evenSum);
+	return (0);
 }
