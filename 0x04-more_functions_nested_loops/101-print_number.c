@@ -3,7 +3,7 @@
 /**
  * print_number - Print the given number
  *
- * @n - a given number
+ * @n: a given number
  *
  * Return: void
  */
