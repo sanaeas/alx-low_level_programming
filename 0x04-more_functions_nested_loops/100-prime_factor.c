@@ -9,14 +9,14 @@ int main(void)
 {
 	long num, i;
 
-	n = 612852475143;
-	for (i = 2; i < n; i++)
+	num = 612852475143;
+	for (i = 2; i < num; i++)
 	{
-		while (n % i == 0)
-			n = n / i;
+		while (num % i == 0)
+			num = num / i;
 	}
 
-	printf("%lu\n", n);
+	printf("%lu\n", num);
 
 	return (0);
 }
