@@ -15,9 +15,13 @@ int _strlen(char *s)
 	while (len >= 0)
 	{
 		if (s[len] == '\0')
-		       break;
+		{
+			break;
+		}
 		else
-			len++;	
+		{
+			len++;
+		}
 	}
 	return (len);
 }
