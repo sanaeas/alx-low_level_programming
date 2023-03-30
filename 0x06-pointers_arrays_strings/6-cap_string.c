@@ -18,10 +18,10 @@ char *cap_string(char *str)
 		j = 0;
 		while (sep[j] != '\0')
 		{
-			if (str[i] == sep[j] &&
-				(str[i + 1] > 96 && str[i + 1] < 123))
+			if (str[i] == sep[j])
 			{
-				str[i + 1] -= 32;
+				if (str[i + 1] > 96 && str[i + 1] < 123)
+					str[i + 1] -= 32;
 				break;
 			}
 			j++;
