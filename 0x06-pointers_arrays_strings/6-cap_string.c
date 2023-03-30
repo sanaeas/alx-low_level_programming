@@ -10,7 +10,7 @@
 char *cap_string(char *str)
 {
 	int i, j;
-	char sep[] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
+	char sep[] = {' ', 9, '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
 
 	i = 0;
 	while (str[i] != '\0')
@@ -20,7 +20,7 @@ char *cap_string(char *str)
 		{
 			if (str[i] == sep[j])
 			{
-				if (str[i + 1] > 96 && str[i + 1] < 123)
+				if (str[i + 1] >= 97 && str[i + 1] <= 122)
 					str[i + 1] -= 32;
 				break;
 			}
