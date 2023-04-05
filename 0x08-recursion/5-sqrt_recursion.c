@@ -17,12 +17,10 @@ int _sqrt_root(int i, int n, int r)
 		r += 1;
 		i += 2;
 		_sqrt_root(i, n, r);
-	}
-	if (n == 0)
+	} else if (n == 0)
 	{
 		return (r += 1);
 	}
-	return (-1);
 }
 
 /**
@@ -34,5 +32,9 @@ int _sqrt_root(int i, int n, int r)
  */
 int _sqrt_recursion(int n)
 {
-	return (_sqrt_root(1, n, 0));
+	int root = _sqrt_root(1, n, 0);
+
+	if (root * root != n)
+		return (-1);
+	return (root);
 }
