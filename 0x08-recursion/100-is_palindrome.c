@@ -32,12 +32,9 @@ int check(char *s, int i)
 	{
 		if (i + 1 == len || i == len)
 			return (1);
-		check(s, i + 1);
+		return (check(s, i + 1));
 	}
-	else
-	{
-		return (0);
-	}
+	return (0);
 }
 
 /**
