@@ -9,8 +9,11 @@
  */
 int _strlen(char *s)
 {
+	int len = 0;
+
 	if (*s)
-		return (1 + _strlen(s + 1));
+		len = 1 + _strlen(s + 1);
+	return (len);
 }
 
 /**
