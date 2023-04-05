@@ -16,7 +16,7 @@ int _sqrt_root(int i, int n, int r)
 	{
 		r += 1;
 		i += 2;
-		return _sqrt_root(i, n, r);
+		return (_sqrt_root(i, n, r));
 	} else if (n == 0)
 	{
 		return (r += 1);
