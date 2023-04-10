@@ -11,16 +11,21 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, result;
+	int i, j, result;
 
-	i = 1;
 	result = 0;
+	i = 1;
 	while (i < argc)
 	{
-		if (!(atoi(argv[i])))
+		j = 0;
+		while (argv[i][j] != '\0')
 		{
-			printf("Error\n");
-			return (1);
+			if (argv[i][j] < '0' || argv[i][j] > '9')
+			{
+				printf("Error\n");
+				return (1);
+			}
+			j++;
 		}
 		result += atoi(argv[i]);
 		i++;
