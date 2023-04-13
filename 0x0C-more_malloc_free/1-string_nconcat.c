@@ -35,32 +35,36 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int size = 0, size2, i, j = 0;
 	char *final_str;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-	size += _strlen(s1);
-	size2 = _strlen(s2);
-	if (size2 > n)
-		size += n;
-	else
-		size += size2;
+	if (s1)
+		size += _strlen(s1);
+	if (s2)
+	{
+		size2 = _strlen(s2);
+		if (size2 > n)
+			size += n;
+		else
+			size += size2;
+	}
 	final_str = malloc(sizeof(char) * (size + 1));
 	if (!final_str)
 		return (NULL);
 	i = 0;
-	while (s1[i] != '\0')
+	if (s1)
 	{
-		final_str[i] = s1[i];
-		i++;
+		while (s1[i] != '\0')
+		{
+			final_str[i] = s1[i];
+			i++;
+		}
 	}
-	while (j < n)
+	if (s2)
 	{
-		if (s2[j] == '\0')
-			break;
-		final_str[i] = s2[j];
-		j++;
-		i++;
+		while (j < n)
+		{
+			final_str[i] = s2[j];
+			j++;
+			i++;
+		}
 	}
 	final_str[i] = '\0';
 	return (final_str);
