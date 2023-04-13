@@ -13,6 +13,7 @@ unsigned int _strlen(char *s)
 	unsigned int size, i;
 
 	i = 0;
+	size = 0;
 	while (s[i] != '\0')
 	{
 		size++;
@@ -59,7 +60,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	if (s2)
 	{
-		while (j < n)
+		while (s2[j] != '\0' && j < n)
 		{
 			final_str[i] = s2[j];
 			j++;
