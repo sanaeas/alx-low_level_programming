@@ -49,7 +49,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (!final_str)
 		return (NULL);
 	i = 0;
-	while (i < size1)
+	while (s1[i] != '\0')
 	{
 		final_str[i] = s1[i];
 		i++;
