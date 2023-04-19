@@ -29,7 +29,14 @@ int main(int argc, char *argv[])
 
 	ptr = (unsigned char *)main;
 	for (i = 0; i < bytes; i++)
+	{
+		if (i == (bytes - 1))
+		{
+			printf("%02x ", *ptr++);
+			break;
+		}
 		printf("%02x ", *ptr++);
+	}
 	printf("\n");
 	return (0);
 }
