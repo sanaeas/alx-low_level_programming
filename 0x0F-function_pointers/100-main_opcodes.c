@@ -32,10 +32,10 @@ int main(int argc, char *argv[])
 	{
 		if (i == (num_bytes - 1))
 		{
-			printf("%02x\n", *ptr++);
+			printf("%02x\n", ptr[i]);
 			break;
 		}
-		printf("%02x ", *ptr++);
+		printf("%02x ", ptr[i]);
 	}
 	return (0);
 }
