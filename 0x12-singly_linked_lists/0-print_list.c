@@ -11,7 +11,7 @@
 size_t print_list(const list_t *h)
 {
 	const list_t *temp = h;
-	unsigned int nodes_num;
+	size_t nodes_num;
 
 	nodes_num = 0;
 	while (temp != NULL)
