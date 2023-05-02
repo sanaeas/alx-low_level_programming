@@ -35,8 +35,6 @@ size_t print_listint_safe(const listint_t *head)
 		printf("[%p] %d\n", (void *)current, current->n);
 		visited[count++] = current;
 		current = current->next;
-		if (count >= 150)
-			break;
 	}
 	return (count);
 }
