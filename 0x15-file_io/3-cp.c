@@ -28,16 +28,14 @@ int main(int argc, char *argv[])
 	to = open(argv[2], O_CREAT | O_WRONLY | O_APPEND | O_TRUNC, 0664);
 	if (to == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	while ((n_read = read(from, buf, 1024)) > 0)
 	{
 		n_written = write(to, buf, n_read);
-		if (n_written == -1)
-			dprintf(2, "Error: Can't write to file %s\n", argv[2]), exit(99);
-		if (n_written != n_read)
-			dprintf(2, "Error: Write to file %s fails\n", argv[2]), exit(99);
+		if (n_written == -1 || (n_written != n_read))
+			dprintf(2, "Error: Can't write to %s\n", argv[2]), exit(99);
 	}
 	if (n_read == -1)
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]), exit(98);
