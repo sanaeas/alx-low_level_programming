@@ -1,6 +1,29 @@
 #include "search_algos.h"
 
 /**
+ * print_arr - prints the array
+ *
+ * @array: a pointer to the first element of the array to search in
+ * @left: index of the left boundary
+ * @right: index of the right boundary
+ *
+ * Return: void
+ */
+void print_arr(int *array, size_t left, size_t right)
+{
+	size_t i;
+
+	printf("Searching in array: ");
+	for (i = left; i <= right; i++)
+	{
+		printf("%d", array[i]);
+		if (i < right)
+			printf(", ");
+	}
+	printf("\n");
+}
+
+/**
  * advanced_binary_recursive - performs the binary search
  *
  * @array: a pointer to the first element of the array to search in
@@ -12,20 +35,13 @@
  */
 int advanced_binary_recursive(int *array, size_t left, size_t right, int value)
 {
-	size_t mid, i;
+	size_t mid;
 
 	if (left < right)
 	{
 		mid = (left + right) / 2;
 
-		printf("Searching in array: ");
-		for (i = left; i <= right; i++)
-		{
-			printf("%d", array[i]);
-			if (i < right)
-				printf(", ");
-		}
-		printf("\n");
+		print_arr(array, left, right);
 		if (array[mid] == value && (array[mid - 1] != value))
 			return (mid);
 		else if (value <= array[mid])
@@ -33,14 +49,7 @@ int advanced_binary_recursive(int *array, size_t left, size_t right, int value)
 		else if (value > array[mid])
 			return (advanced_binary_recursive(array, mid + 1, right, value));
 	}
-	printf("Searching in array: ");
-	for (i = left; i <= right; i++)
-	{
-		printf("%d", array[i]);
-		if (i < right)
-			printf(", ");
-	}
-	printf("\n");
+	print_arr(array, left, right);
 	if (value == array[right])
 		return (right);
 
